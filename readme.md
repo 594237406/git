@@ -52,6 +52,12 @@ git remote add origin https://594237406:jdkn45263@github.com/594237406/senior.gi
 git push origin master                   //推送到远程地址
 ```
 
+8.删除文件
+```
+git rm filename        //提交后无法找回
+rm filename            //提交后无法找回
+```
+
 
 
 
