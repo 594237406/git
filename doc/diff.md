@@ -14,16 +14,14 @@
 5.输出自topic和master分别开发以来，master分支上的changed。
     git diff topic...master
 
-6.查看简单的diff结果，可以加上--stat参数
-    git diff --stat
+6.查看当前目录和另外一个分支的差别
+      git diff test
 
-7.查看当前目录和另外一个分支的差别
-    git diff test
-
-8.比较上次提交commit和上上次提交
+7.比较上次提交commit和上上次提交
     git diff HEAD^ HEAD
 
-9.比较两个历史版本之间的差异
+8.比较两个历史版本之间的差异
     git diff id1 id2
 
-10
+9.查看简单的diff结果，可以加上--stat参数
+      git diff --stat
