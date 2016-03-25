@@ -35,6 +35,7 @@ git log --pretty=oneline    //忽略更多提示信息
 
 6.版本回退
 ```
+git checkout filename      //如果没有添加到暂存区撤销工作区修改,还原到上一个版本.如果添加到暂存区,还原到暂存区
 git reset --soft id        //回退到commit,工作区和暂存区不做变化
 git reset --mixed          //默认,回退到index,工作区不做变化
 git reset --keep           //回退到add,保留已经提交到index的修改和没有提交到index上的修改
