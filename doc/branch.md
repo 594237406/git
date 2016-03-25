@@ -38,10 +38,16 @@ git push origin :branch-name
 
 
 5.推送到远程分支
+```
 git push origin test
+```
 
 6.下载远程分支
+```
 git checkout -b dev origin/dev
+```
 
 7.建立本地分支与远程分支链接
-git branch --set-upstream branch-name origin/branch-name
+```
+git branch --set-upstream branch-name origin/branchname
+```
