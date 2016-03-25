@@ -23,9 +23,17 @@ node_modules
 git commit -m "代码提交信息"  //提交到head仓库
 
 4.查看日志
+```
 git log
-git log suppress summary
+git log --pretty=oneline    //忽略更多提示信息
+```
 
+5.版本回退
+```
+git reset --hard HEAD^   //HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
+git reset --hard 3628164 //回退到某个版本号
+git reflog //查看历史命令
+```
 
 4.git remote add origin 远程推送地址        //只对init目录执行，设置远程提交地址
 
