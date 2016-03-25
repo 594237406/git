@@ -20,11 +20,8 @@
 7.查看当前目录和另外一个分支的差别
     git diff test
 
-8.git diff HEAD -- ./lib
-显示当前目录下的lib目录和上次提交之间的差别（更准确的说是在当前分支下）
-
-9.比较上次提交commit和上上次提交
+8.比较上次提交commit和上上次提交
     git diff HEAD^ HEAD
 
-10.比较两个历史版本之间的差异
-    git diff SHA1 SHA2
+9.比较两个历史版本之间的差异
+    git diff id1 id2
