@@ -2,3 +2,6 @@
 
 
 2.git hard
+
+
+3.git easy
