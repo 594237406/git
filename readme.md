@@ -1,9 +1,11 @@
 1.概念
+```
 工作区:电脑里的目录
 版本库:工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
 暂存区:add后需要提交的文件临时存储区
 本地分支:commit后提交到git为我们自动创建的第一个分支master，HEAD指向master
 HEAD:当前活跃分支的游标。形象的记忆就是：你现在在哪儿，HEAD 就指向哪儿，所以 Git 才知道你在那儿。
+```
 
 2. 新建.git文件
 ```
@@ -33,6 +35,8 @@ git log --pretty=oneline    //忽略更多提示信息
 
 6.版本回退
 ```
+git reset --soft         //回退到commit
+git reset --mixed        //默认,回退到add
 git reset --hard HEAD^   //HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
 git reset --hard 3628164 //回退到某个版本号
 git reflog //查看历史命令
