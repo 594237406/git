@@ -35,7 +35,7 @@ git log --pretty=oneline    //忽略更多提示信息
 
 6.版本回退
 ```
-git checkout filename      //如果没有添加到暂存区撤销工作区修改,还原到上一个版本.如果添加到暂存区,还原到暂存区
+git checkout filename      //如果没有添加到暂存区撤销工作区修改,还原到上一个版本.如果添加到暂存区,还原到暂存区.如果文件被删除,重新下载
 git reset --soft id        //回退到commit,工作区和暂存区不做变化
 git reset --mixed          //默认,回退到index,工作区不做变化
 git reset --keep           //回退到add,保留已经提交到index的修改和没有提交到index上的修改
@@ -45,42 +45,16 @@ git reset --hard 3628164   //回退到某个版本号,本地修改丢失
 git reflog //查看历史命令
 ```
 
-4.git remote add origin 远程推送地址        //只对init目录执行，设置远程提交地址
-
-5.git push origin master                   //推送到远程地址
-
-6.git status                               //看状态
-
-7.不用输入用户名密码，方法：
-
+7.推送远程版本
+```
 git remote rm origin                       //删除推送地址重新设置
-
 git remote add origin https://594237406:jdkn45263@github.com/594237406/senior.git
+git push origin master                   //推送到远程地址
+```
 
 
-8.add与commit合并:git commit -a -m ""
 
-9.更新代码 git pull
 
-10.对比代码 git diff
-
-11.删除远程分支
-git branch -r -d origin/branch-name
-
-不成功，发现只是删除的本地对该远程分支的track，正确的方法应该是这样：
-
-git push origin :branch-name
-
-冒号前面的空格不能少，原理是把一个空分支push到server上，相当于删除该分支。
-
-12.推送到远程分支
-git push origin test
-
-13.查看远程分支
-git branch -a
-
-14.下载远程分支
-git checkout -b online origin/release/online
 
 
 
