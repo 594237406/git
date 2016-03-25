@@ -1,20 +1,30 @@
-1.git reset
+1.比较的是工作目录(Working tree)和暂存区域快照(index)之间的差异
+    git diff
 
+2.显示的是下一次commit时会提交到HEAD的内容(不带-a情况下)
+    git diff --cached
+    git diff --staged
 
-2.git hard
+3.显示工作版本(Working tree)和HEAD的差别
+    git diff HEAD
 
+4.直接将两个分支上最新的提交做diff
+    git diff branch1 branch2
 
-3.git easy
+5.输出自topic和master分别开发以来，master分支上的changed。
+    git diff topic...master
 
+6.查看简单的diff结果，可以加上--stat参数
+    git diff --stat
 
-4.git 4
+7.查看当前目录和另外一个分支的差别
+    git diff test
 
-5.git 5
+8.git diff HEAD -- ./lib
+显示当前目录下的lib目录和上次提交之间的差别（更准确的说是在当前分支下）
 
-6.git 6
+9.比较上次提交commit和上上次提交
+    git diff HEAD^ HEAD
 
-7.git 7
-
-8.git 8
-
-9.git 9
+10.比较两个历史版本之间的差异
+    git diff SHA1 SHA2
