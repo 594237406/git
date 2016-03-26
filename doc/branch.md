@@ -34,6 +34,8 @@ git branch -d branchname
 //删除远程分支
 git branch -r -d origin/branchname
 git push origin :branch-name
+//强行删除分支:分支没有合并,不让删除,必须强行删除
+git branch -D feature-vulcan
 ```
 
 5.推送到远程分支

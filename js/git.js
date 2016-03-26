@@ -7,3 +7,6 @@ let a;
 let checkout;
 
 let test;
+
+
+let stash;
