@@ -9,6 +9,4 @@ let checkout;
 let test;
 
 
-let stash;
 
-let d=1;
