@@ -3,3 +3,5 @@
  */
 
 let git
+let a
+let checkout
