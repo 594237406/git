@@ -36,10 +36,9 @@ git branch -r -d origin/branchname
 git push origin :branch-name
 ```
 
-
 5.推送到远程分支
 ```
-git push origin test
+git push origin master  //把本地分支推送到远程分支上
 ```
 
 6.下载远程分支
@@ -50,4 +49,15 @@ git checkout -b dev origin/dev
 7.建立本地分支与远程分支链接
 ```
 git branch --set-upstream branch-name origin/branchname
+```
+
+8.查看分支合并图
+```
+git log --graph
+```
+
+9.禁用Fast forward
+```
+//如果A,B分支都做修改,则会产生a,b两个版本,合并后产生c版本
+git merge --no-ff b  //把b合并到a版本,不会产生c版本
 ```
