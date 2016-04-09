@@ -46,6 +46,8 @@ git push origin master                   //推送到远程地址
 git rm filename        //提交后无法找回
 rm filename            //提交后无法找回
 ```
+8.查询关键字
+git grep xxx
 
 
 
