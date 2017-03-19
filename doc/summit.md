@@ -1,4 +1,4 @@
-###编写文档
+### 编写文档
 
 所有功能点必须提交配套文档，文档须满足以下要求
 
@@ -6,11 +6,11 @@
 - how 部分必须包含详尽完整的操作步骤，必要时附上 足够简单，可运行 的范例代码，所有范例代码放在 chair/examples 库中。
 - 提供必要的链接，如申请流程，术语解释和参考文档等。
 
-####代码风格
+#### 代码风格
 
 你的代码风格必须通过 jslint，你可以运行 npm run lint 本地测试。
 
-####Commit 提交规范
+#### Commit 提交规范
 
 根据 angular 规范提交 commit，这样 history 看起来更加清晰，还可以自动生成 changelog。
 ```
@@ -49,7 +49,7 @@
 5. footer
 
     当有非兼容修改时可在这里描述清楚
-    关联相关 issue，如 Closes #1, #2, #3
+    关联相关 issue，如 Closes # 1, # 2, # 3
     如果功能点有新增或修改的，还需要关联 chair-handbook 和 chair-init 的 MR
 
 示例
@@ -60,7 +60,7 @@ Older IEs serialize html uppercased, but IE9 does not...
 Would be better to expect case insensitive, unfortunately jasmine does
 not allow to user regexps for throw expectations.
 
-Closes #392
+Closes # 392
 Breaks foo.bar api, foo.baz should be used instead
 ```
 

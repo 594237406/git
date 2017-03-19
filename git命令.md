@@ -8,7 +8,7 @@ Git支持分支功能（branch）。如果你想开发一个新的产品功能�
 
 Git提供了命令行工具；这个教程会使用命令行。你也可以找到图形工具，譬如与Eclipse配套的EGit工具，但是这些都不会在这个教程中进行描述。
 
-###1.2. 索引
+### 1.2. 索引
 Git 需要将代码的变化显示的与下一次提交进行关联。举个例子，如果你对一个文件继续了修改，然后想将这些修改提交到下一次提交中，你必须将这个文件提交到索引中，通过git add file命令。这样索引可以保存所有变化的快照。
 
 新增的文件总是要显示的添加到索引中来。对于那些之前已经提交过的文件，可以在commit命令中使用-a 选项达到提交到索引的目的。
@@ -36,19 +36,19 @@ Git 需要将代码的变化显示的与下一次提交进行关联。举个例�
 	git config --list
  
 
-###2.2. 高亮显示
+### 2.2. 高亮显示
 以下命令会为终端配置高亮
 
 	git config --global color.status auto
 	git config --global color.branch auto
  
 
-###2.3. 忽略特定的文件
+### 2.3. 忽略特定的文件
 可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。 
 
  同时Git也提供了全局的配置，core.excludesfile。
 
-###2.4. 使用.gitkeep来追踪空的文件夹
+### 2.4. 使用.gitkeep来追踪空的文件夹
 Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根据惯例会在空文件夹下放置.gitkeep文件。其实对文件名没有特定的要求。一旦一个空文件夹下有文件后，这个文件夹就会在版本控制范围内。
 
 ## 3. 开始操作Git ##
@@ -56,7 +56,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 
 让我们打开命令行开始操作吧
 
-###3.1. 创建内容
+### 3.1. 创建内容
 下面创建一些文件，它们会被放到版本控制之中 
 
 	-Switch to home
@@ -76,7 +76,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	ls >test01
  
 
-###3.2. 创建仓库、添加文件和提交更改
+### 3.2. 创建仓库、添加文件和提交更改
 每个Git仓库都是放置在.git文件夹下.这个目录包含了仓库的所有历史记录，.git/config文件包含了仓库的本地配置。
 
 以下将会创建一个Git仓库，添加文件倒仓库的索引中，提交更改。
@@ -90,7 +90,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	-Show the log file
 	git log
  
-###3.3. diff命令与commit更改
+### 3.3. diff命令与commit更改
 通过git diff命令，用户可以查看更改。通过改变一个文件的内容，看看git diff命令输出什么，然后提交这个更改到仓库中 
 
 	-Make some changes to the file
@@ -105,7 +105,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	git commit -a -m "These are new changes"
  
 
-###3.4. Status, Diff 和 Commit Log
+### 3.4. Status, Diff 和 Commit Log
 下面会向你展示仓库现有的状态以及过往的提交历史
 	
 	-Make some changes in the file
@@ -129,14 +129,14 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	gitk --all
  
 
-###3.5. 更正提交的信息 - git amend
+### 3.5. 更正提交的信息 - git amend
 通过git amend命令，我们可以修改最后提交的的信息
 
 上述的提交信息中存在错误，下面会修改这个错误
 
     git commit --amend -m "More changes - now correct"
  
-###3.6. 删除文件
+### 3.6. 删除文件
 如果你删除了一个在版本控制之下的文件，那么使用git add .不会在索引中删除这个文件。需要通过带-a选项的git commit命令和-A选项的git add命令来完成
 
 	-Create a file and put it under version control
@@ -153,8 +153,8 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	git commit -m "File nonsense.txt is now removed"
  
 
-##4. 远端仓库（remote repositories）
-###4.1. 设置一个远端的Git仓库
+## 4. 远端仓库（remote repositories）
+### 4.1. 设置一个远端的Git仓库
 我们将创建一个远端的Git仓库。这个仓库可以存储在本地或者是网络上。
 
 远端Git仓库和标准的Git仓库有如下差别：一个标准的Git仓库包括了源代码和历史信息记录。我们可以直接在这个基础上修改代码，因为它已经包含了一个工作副本。但是远端仓库没有包括工作副本，只包括了历史信息。可以使用--bare选项来创建一个这样的仓库。
@@ -170,7 +170,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	ls ~/remote-repository.git
  
 
-###4.2. 推送更改到其他的仓库
+### 4.2. 推送更改到其他的仓库
 做一些更改，然后将这些更改从你的第一个仓库推送到一个远端仓库 
 
 	-Make some changes in the first repository
@@ -187,7 +187,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	-Push the changes
 	git push ../remote-repository.git
 	 
-###4.3. 添加远端仓库
+### 4.3. 添加远端仓库
 除了通过完整的URL来访问Git仓库外，还可以通过git remote add命令为仓库添加一个短名称。当你克隆了一个仓库以后，origin表示所克隆的原始仓库。即使我们从零开始，这个名称也存在。 
 
 	-Add ../remote-repository.git with the name origin
@@ -201,13 +201,13 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	git push origin
  
 
-###4.4. 显示已有的远端仓库
+### 4.4. 显示已有的远端仓库
 通过以下命令查看已经存在的远端仓库 
 
 	-Show the existing defined remote repositories
 	git remote
  
-###4.5. 克隆仓库
+### 4.5. 克隆仓库
 通过以下命令在新的目录下创建一个新的仓库 
 
 	-Switch to home
@@ -222,7 +222,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 	git clone ../remote-repository.git .
  
 
-###4.6. 拉取（Pull）更改
+### 4.6. 拉取（Pull）更改
 通过拉取，可以从其他的仓库中获取最新的更改。在第二个仓库中，做一些更改，然后将更改推送到远端的仓库中。然后第一个仓库拉取这些更改 
 
 	-Switch to home
@@ -246,7 +246,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 
  
 
-##5. 还原更改
+## 5. 还原更改
 如果在你的工作副本中，你创建了不想被提交的文件，你可以丢弃它。 
 
 	-Create a new file with content
@@ -328,7 +328,7 @@ Git会忽略空的文件夹。如果你想版本控制包括空文件夹，根�
 
  
 
-##6. 标记
+## 6. 标记
 Git可以使用对历史记录中的任一版本进行标记。这样在后续的版本中就能轻松的找到。一般来说，被用来标记某个发行的版本
 
 可以通过git tag命令列出所有的标记，通过如下命令来创建一个标记和恢复到一个标记 
@@ -337,8 +337,8 @@ git tag version1.6 -m 'version 1.6'
 git checkout <tag_name>
  
 
-##7. 分支、合并
-###7.1. 分支
+## 7. 分支、合并
+### 7.1. 分支
 通过分支，可以创造独立的代码副本。默认的分支叫master。Git消耗很少的资源就能创建分支。Git鼓励开发人员多使用分支
 
 下面的命令列出了所有的本地分支，当前所在的分支前带有*号
@@ -369,7 +369,7 @@ git checkout <tag_name>
     cat test01
   
 
-###7.2. 合并
+### 7.2. 合并
 通过Merge我们可以合并两个不同分支的结果。Merge通过所谓的三路合并来完成。分别来自两个分支的最新commit和两个分支的最新公共commit
 
 可以通过如下的命令进行合并 
@@ -378,7 +378,7 @@ git checkout <tag_name>
     git merge testing
 一旦合并发生了冲突，Git会标志出来，开发人员需要手工的去解决这些冲突。解决冲突以后，就可以将文件添加到索引中，然后提交更改
 
-###7.3. 删除分支
+### 7.3. 删除分支
 删除分支的命令如下： 
 
     -Delete branch testing
@@ -387,7 +387,7 @@ git checkout <tag_name>
     git branch
   
 
-###7.4. 推送（push）一个分支到远端仓库
+### 7.4. 推送（push）一个分支到远端仓库
 默认的，Git只会推送匹配的分支的远端仓库。这意味在使用git push命令默认推送你的分支之前，需要手工的推送一次这个分支。 
 
     -Push testing branch to remote repository
@@ -404,7 +404,7 @@ git checkout <tag_name>
     git push
 通过这种方式，你可以确定哪些分支对于其他仓库是可见的，而哪些只是本地的分支  
 
-##8. 解决合并冲突
+## 8. 解决合并冲突
 如果两个不同的开发人员对同一个文件进行了修改，那么合并冲突就会发生。而Git没有智能到自动解决合并两个修改
 
 在这一节中，我们会首先制造一个合并冲突，然后解决它，并应用到Git仓库中
@@ -459,8 +459,8 @@ Git将冲突放在收到影响的文件中，文件内容如下：
 
  
 
-##9. 变基（Rebase）
-###9.1. 在同一分支中应用Rebase Commit
+## 9. 变基（Rebase）
+### 9.1. 在同一分支中应用Rebase Commit
 通过rebase命令可以合并多个commit为一个。这样用户push更改到远端仓库的时候就可以先修改commit历史
 
 接下来我们将创建多个commit，然后再将它们rebase成一个commit
@@ -496,7 +496,7 @@ Git将冲突放在收到影响的文件中，文件内容如下：
 
 Squash会合并commit信息而fixup会忽略commit信息（待理解）
 
-###9.2. Rebasing多个分支
+### 9.2. Rebasing多个分支
 你也可以对两个分支进行rebase操作。如下所述，merge命令合并两个分支的更改。rebase命令为一个分支的更改生成一个补丁，然后应用这个补丁到另一分支中
 
 使用merge和rebase，最后的源代码是一样的，但是使用rebase产生的commit历史更加的少，而且历史记录看上去更加的线性 
@@ -512,7 +512,7 @@ Squash会合并commit信息而fixup会忽略commit信息（待理解）
 	-Rebase the master
 	git rebase master
  
-###9.3.Rebase最佳实践
+### 9.3.Rebase最佳实践
 在push更改到其他的Git仓库之前，我们需要仔细检查本地分支的commit历史
 
 在Git中，你可以使用本地的commit。开发人员可以利用这个功能方便的回滚本地的开发历史。但是在push之前，需要观察你的本地分支历史，是否其中有些commit历史对其他用户来说是无关的
@@ -523,7 +523,7 @@ Squash会合并commit信息而fixup会忽略commit信息（待理解）
 
 如果你修改然后push了一个已经在目标仓库中存在的commit历史，这看起来就像是你实现了一些别人已经实现的功能
 
-##10. 创建和应用补丁
+## 10. 创建和应用补丁
 一个补丁指的是一个包含对源代码进行修改的文本文件。你可以将这个文件发送给某人，然后他就可以应用这个补丁到他的本地仓库
 
 下面会创建一个分支，对这个分支所一些修改，然后创建一个补丁，并应用这个补丁到master分支 
@@ -557,7 +557,7 @@ Squash会合并commit信息而fixup会忽略commit信息（待理解）
     rm 0001-First-commit-in-the-branch.patch
      
 
-##11. 定义同名命令
+## 11. 定义同名命令
 Git允许你设定你自己的Git命令。你可以给你自己常用的命令起一个缩写命令，或者合并几条命令道一个命令上来。
 
 下面的例子中，定义了git add-commit 命令，这个命令合并了git add . -A 和git commit -m 命令。定义这个命令后，就可以使用git add-commit -m "message" 了.
@@ -565,7 +565,7 @@ Git允许你设定你自己的Git命令。你可以给你自己常用的命令�
     git config --global alias.add-commit '!git add . -A && git commit'
 但是非常不幸，截止写这篇文章之前，定义同名命令在msysGit中还没有支持。同名命令不能以！开始。
 
-##12. 放弃跟踪文件
+## 12. 放弃跟踪文件
 有时候，你不希望某些文件或者文件夹被包含在Git仓库中。但是如果你把它们加到.gitignore文件中以后，Git会停止跟踪这个文件。但是它不会将这个文件从仓库中删除。这导致了文件或者文件夹的最后一个版本还是存在于仓库中。为了取消跟踪这些文件或者文件夹，你可以使用如下的命令
 
  
@@ -576,7 +576,7 @@ Git允许你设定你自己的Git命令。你可以给你自己常用的命令�
 	git rm --cached test.txt
 这样做不会将这些文件从commit历史中去掉。如果你想将这些文件从commit历史中去掉，可以参考git filter-branch命令
 
-##13. 安装Git服务
+## 13. 安装Git服务
 如上所述，我们的操作不需要Git服务。我可以只使用文件系统或者是Git仓库的提供者，像Github或Bitbucket。但是，有时候，拥有一个自己的服务是比较方便的，在ubuntu下安装一个服务相对来说是比较容易的
 
 确定你已经安装了ssh
@@ -618,8 +618,8 @@ Git允许你设定你自己的Git命令。你可以给你自己常用的命令�
 	git push origin master
   
 
-##14. 在线的远端仓库
-###14.1. 克隆远端仓库
+## 14. 在线的远端仓库
+### 14.1. 克隆远端仓库
 Git支持远端的操作。Git支持多种的传输类型，Git自带的协议就叫做git。下面的的命令通过git协议从克隆一个仓库 
 
     git clone git@github.com:vogella/gitbook.git
@@ -629,7 +629,7 @@ Git支持远端的操作。Git支持多种的传输类型，Git自带的协议�
     git clone http://vogella@github.com/vogella/gitbook.git
   
 
-###14.2. 添加远端仓库
+### 14.2. 添加远端仓库
 如果你克隆了一个远端仓库，那么原先的仓库就叫做origin
 
 你可以push修改到origin中，通过 git push origin 命令. 当然，push到一个远端的仓库需要对仓库的写权限
